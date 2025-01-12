@@ -6,8 +6,23 @@ function StartGame() {
 
     let windowWidth = window.innerWidth;
     let windowHeight = window.innerHeight;
-    canvas.width = windowWidth - windowWidth / 10;
-    canvas.height = windowHeight - windowWidth / 10;
+    if (windowWidth > windowHeight) {
+        if (windowWidth > 1000) {
+            canvas.width = windowWidth - windowWidth / 10;
+            canvas.height = windowHeight - windowWidth / 10;
+        } else {
+            canvas.width = windowWidth;
+            canvas.height = windowHeight;
+        }
+    } else {
+        if (windowHeight > 1000) {
+            canvas.width = windowWidth - windowHeight / 10;
+            canvas.height = windowHeight - windowHeight / 10;
+        } else {
+            canvas.width = windowWidth;
+            canvas.height = windowHeight;
+        }
+    }
     canvas.style.backgroundColor = "#E6E4EE";
     console.log("canvas.width   " + canvas.width);
     console.log("canvas.height   " + canvas.height);
@@ -107,12 +122,13 @@ function StartGame() {
             this.ypos = ypos;
             this.maxwidth = maxwidth;
             this.maxheight = maxheight;
-            this.speed = speed || 1;
-            this.range = range || 150;
+            this.speed = speed || 10;
+            this.range = range || 200;
             this.YrangePlus = this.ypos + this.range;
             this.YrangeMinus = this.ypos - this.range;
             this.dx = 1 * this.speed;
             this.dy = 1 * this.speed;
+            this.gravity = 0.1;
             this.src = src;
             this.image = new Image();
             this.image.src = this.src;
@@ -157,14 +173,14 @@ function StartGame() {
             } else {
                 ctx.drawImage(this.image, this.xpos, this.ypos, width, height);
             }
-            if (this.isAngle) {
+            /*if (this.isAngle) {
                 ctx.restore();
                 ctx.rotate(this.angle * Math.PI / 180);
                 ctx.drawImage(this.image, this.xpos, this.ypos, width, height);
                 console.log("Angle!!");
-            }
+            }*/
             ctx.restore();
-            
+
         }
 
         animationImage() {
@@ -175,15 +191,18 @@ function StartGame() {
             this.drawImg(ctx);
             this.xpos += this.dx;
             this.ypos += this.dy;
-            if (this.ypos > this.YrangePlus) {
-                this.dy = -this.dy;
+            if (this.ypos > this.YrangePlus - this.maxheight) {
+                this.dy += -this.gravity;
+                //this.dy = -this.dy;
                 this.isAngle = !this.isAngle;
                 this.angle = -45;
             }
             if (this.ypos < this.YrangeMinus) {
-                this.dy = -this.dy;
+                this.dy += this.gravity;
+                //.dy = -this.dy;
                 this.isAngle = !this.isAngle;
                 this.angle = 45;
+                this.gravity = this.gravity;
             }
             if (this.xpos > canvas.width) {
                 this.dx = -this.dx;
@@ -262,7 +281,7 @@ function StartGame() {
         let img = "A.png";
         //let randomY = Math.random() * canvas.height;
         let randomY = canvas.height / 2;
-        let newImag = new Img(img, 0, randomY, 100, 100, 5);
+        let newImag = new Img(img, 0, randomY, 100, 100, 3, 12.5);
         newImag.drawImg(ctx);
         let animationImg = function () {
             newImag.animationImage();
