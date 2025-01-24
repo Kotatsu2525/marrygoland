@@ -41,3 +41,7 @@ for (let i = 0; i < 10; i++) {
 console.log(allCircles);
 CircleCount = allCircles.length;
 console.log(CircleCount);
+
+
+
+
