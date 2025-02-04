@@ -12,24 +12,24 @@ console.log("1,0 : " + testArray[1][0]);
 var allCircles = [];
 
 for (let i = 0; i < 10; i++) {
-    var CircleInformation = [];
-    let xposition = Math.random() * 300;
-    CircleInformation.push(xposition);
-    let yposition = Math.random() * 100;
-    CircleInformation.push(yposition);
-    let Rdius = 20;
-    CircleInformation.push(Rdius);
-    let allColors = ["red", "blue", "green", "yellow", "orange", "pink"];
-    let ColorNumber = Math.floor(Math.random() * allColors.length);
-    let Color = allColors[ColorNumber];
-    CircleInformation.push(Color);
-    let text = 1;
-    CircleInformation.push(text);
-    let speed = Math.random() * 20;
-    CircleInformation.push(speed);
+  var CircleInformation = [];
+  let xposition = Math.random() * 300;
+  CircleInformation.push(xposition);
+  let yposition = Math.random() * 100;
+  CircleInformation.push(yposition);
+  let Rdius = 20;
+  CircleInformation.push(Rdius);
+  let allColors = ["red", "blue", "green", "yellow", "orange", "pink"];
+  let ColorNumber = Math.floor(Math.random() * allColors.length);
+  let Color = allColors[ColorNumber];
+  CircleInformation.push(Color);
+  let text = 1;
+  CircleInformation.push(text);
+  let speed = Math.random() * 20;
+  CircleInformation.push(speed);
 
-    allCircles.push(CircleInformation);
-    /*
+  allCircles.push(CircleInformation);
+  /*
             console.log("xposition" + xposition);
             console.log("yposition" + yposition);
             console.log("Rdius" + Rdius);
@@ -41,7 +41,3 @@ for (let i = 0; i < 10; i++) {
 console.log(allCircles);
 CircleCount = allCircles.length;
 console.log(CircleCount);
-
-
-
-

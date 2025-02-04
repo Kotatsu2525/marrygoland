@@ -1,74 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            background-color: #003;
-        }
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background-color: #003;
+      }
 
-        canvas {
-            display: block;
-            margin: 0 auto;
-        }
-        input[type="button"] {
-            position: absolute;
-            height: 50px;
-            background-color: #ff0;
-            color: #000;
-            font-size: 20px;
-            border: none;
-            cursor: pointer;
-        }
-        #button {
-            top: 10px;
-            left: 10px;
-
-        }
-        #AddImage {
-            top: 10px;
-            left: auto;
-        }
-        #Circle {
-            top: 10px;
-            right: 10px;
-        }
-        #StopAnimation {
-            bottom: 10px;
-            right: 10px;
-            background-color: crimson;
-        }
-        #DisplayBaseline {
-            bottom: 10px;
-            left: 10px;
-            background-color: #0f0;
-        }
-        #packman {
-            top: 10px;
-            left: 10px;
-        }
+      canvas {
+        display: block;
+        margin: 0 auto;
+      }
+      input[type="button"] {
+        position: absolute;
+        height: 50px;
+        background-color: #ff0;
+        color: #000;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+      }
+      #button {
+        top: 10px;
+        left: 10px;
+      }
+      #AddImage {
+        top: 10px;
+        left: auto;
+      }
+      #Circle {
+        top: 10px;
+        right: 10px;
+      }
+      #StopAnimation {
+        bottom: 10px;
+        right: 10px;
+        background-color: crimson;
+      }
+      #DisplayBaseline {
+        bottom: 10px;
+        left: 10px;
+        background-color: #0f0;
+      }
+      #packman {
+        top: 10px;
+        left: 10px;
+      }
     </style>
-</head>
+  </head>
 
-<body onload="StartGame()">
-    <canvas id="gameCanvas" width="600px" height="600px"></canvas><br>
-    <input type="button" value="packmans" id="packman">
-    <input type="button" value="Image" id="AddImage">
-    <input type="button" value="Circle" id="Circle">
-    <input type="button" value="StopAnimation" id="StopAnimation">
-    <input type="button" value="DisplayBaseline" id="DisplayBaseline">
+  <body onload="StartGame()">
+    <canvas id="gameCanvas" width="600px" height="600px"></canvas><br />
+    <input type="button" value="packmans" id="packman" />
+    <input type="button" value="Image" id="AddImage" />
+    <input type="button" value="Circle" id="Circle" />
+    <input type="button" value="StopAnimation" id="StopAnimation" />
+    <input type="button" value="DisplayBaseline" id="DisplayBaseline" />
     <script src="main.js"></script>
-</body>
-
+  </body>
 </html>
